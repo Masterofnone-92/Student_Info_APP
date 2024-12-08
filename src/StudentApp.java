@@ -1,13 +1,15 @@
 public class StudentApp {
     public static void main(String[] args) throws Exception {
         Student student1 = new Student("pekka Niemi", "543626");
+        Student student2 = new Student("Muntasir Islam", "634765", 20, true);
 
         student1.bePresent();
         student1.addStudyRecord(15);
         student1.addStudyRecord(25);
+        student2.addStudyRecord(20);
 
         student1.printInfo();
-
+        student2.printInfo();
     }
 } // End of the studentAPP
 
