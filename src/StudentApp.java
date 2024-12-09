@@ -1,10 +1,10 @@
 public class StudentApp {
     public static void main(String[] args) throws Exception {
-        Student student1 = new Student("pekka Niemi", "543626");
-        Student student2 = new Student("Muntasir Islam", "634765", 20, true);
-        Student student3 = new Student ("Yan Tuo" , "569874" , 30 , false);
-        Student student4 = new Student("Gui Cong","623819", 20, true);
-        
+        Student student1 = new Student("pekka Niemi", "543626", "Linux");
+        Student student2 = new Student("Muntasir Islam", "634765", 20, true, "macOS");
+        Student student3 = new Student("Yan Tuo", "569874", 30, false, "Windows11");
+        Student student4 = new Student("Gui Cong", "623819", 20, true, "Windows 10");
+
         student1.bePresent();
         student1.addStudyRecord(15);
         student1.addStudyRecord(25);
@@ -24,6 +24,7 @@ class Student {
     public String studentNumber;
     public int credits;
     public boolean attendanceStatus;
+    public String operatingSystem;
 
     public Student() {
         name = "";
@@ -32,20 +33,25 @@ class Student {
         attendanceStatus = false;
     }
 
-    public Student(String name, String studentNumber) {
+    // Constructor 1
+    public Student(String name, String studentNumber, String operatingSystem) {
         this.name = name;
         this.studentNumber = studentNumber;
         credits = 0;
         attendanceStatus = false;
+        this.operatingSystem = operatingSystem;
     }
 
-    public Student(String name, String studentNumber, int credits, boolean attendanceStatus) {
+    // Constructor 2 for all attributes
+    public Student(String name, String studentNumber, int credits, boolean attendanceStatus, String operatingSystem) {
         this.name = name;
         this.studentNumber = studentNumber;
         this.credits = credits;
         this.attendanceStatus = attendanceStatus;
+        this.operatingSystem = operatingSystem;
     }
 
+    // Study record
     public void addStudyRecord(int creditAmount) {
         if (attendanceStatus) {
             credits = credits + creditAmount;
@@ -70,6 +76,7 @@ class Student {
 
     }
 
+    // Print all the student data
     public void printInfo() {
         System.out.println("Name:  " + name);
         System.out.println("Student number: " + studentNumber);
@@ -80,7 +87,7 @@ class Student {
         } else {
             System.out.println("Student is absent.");
         }
-
+        System.out.println("Operating System: " + operatingSystem);
     }
 
 }
