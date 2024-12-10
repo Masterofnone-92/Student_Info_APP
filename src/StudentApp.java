@@ -63,7 +63,7 @@ class Student {
     }
 
     // Prints the credit information of the student.
-    public void printCreditinfo() {
+    public void printCreditInfo() {
         System.out.println("Has  " + credits + " credits");
 
     }
@@ -84,7 +84,7 @@ class Student {
     public void printInfo() {
         System.out.println("Name:  " + name);
         System.out.println("Student number: " + studentNumber);
-        printCreditinfo();
+        printCreditInfo();
         if (attendanceStatus) {
 
             System.out.println("Student is present.");
