@@ -1,10 +1,10 @@
 public class StudentApp {
     public static void main(String[] args) throws Exception {
         // Creating student instances
-        Student student1 = new Student("pekka Niemi", "543626");
-        Student student2 = new Student("Muntasir Islam", "634765", 20, true);
-        Student student3 = new Student("Yan Tuo", "569874", 30, false);
-        Student student4 = new Student("Gui Cong", "623819", 20, true);
+        Student student1 = new Student("pekka Niemi", "543626", "Linux");
+        Student student2 = new Student("Muntasir Islam", "634765", 20, true, "Windows 11");
+        Student student3 = new Student("Yan Tuo", "569874", 30, false, "Windows 10");
+        Student student4 = new Student("Gui Cong", "623819", 20, true, "macOS");
 
         // Adding attendance and study records
         student1.bePresent();
@@ -27,6 +27,7 @@ class Student {
     public String studentNumber;
     public int credits;
     public boolean attendanceStatus;
+    public String operatingSystem;
 
     // Default constructor
     public Student() {
@@ -37,19 +38,21 @@ class Student {
     }
 
     // Constructor with name and student number
-    public Student(String name, String studentNumber) {
+    public Student(String name, String studentNumber, String operatingSystem) {
         this.name = name;
         this.studentNumber = studentNumber;
         credits = 0;
         attendanceStatus = false;
+        this.operatingSystem = operatingSystem;
     }
 
     // Constructor with all attributes
-    public Student(String name, String studentNumber, int credits, boolean attendanceStatus) {
+    public Student(String name, String studentNumber, int credits, boolean attendanceStatus, String operatingSystem) {
         this.name = name;
         this.studentNumber = studentNumber;
         this.credits = credits;
         this.attendanceStatus = attendanceStatus;
+        this.operatingSystem = operatingSystem;
     }
 
     // Adds credits to the student's record if they are present.
@@ -91,7 +94,7 @@ class Student {
         } else {
             System.out.println("Student is absent.");
         }
-
+        System.out.println("Operating System: " + operatingSystem);
     }
 
 }
